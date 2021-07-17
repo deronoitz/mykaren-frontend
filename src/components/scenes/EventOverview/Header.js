@@ -1,6 +1,8 @@
-import { Button, Badge } from 'antd'
-import Router from "next/router"
-import Link from '../Link/Link'
+import { Button, Badge } from "antd";
+
+import Router from "next/router";
+import Link from "components/commons/Link";
+
 export default function Header() {
   return (
     <React.Fragment>
@@ -16,7 +18,7 @@ export default function Header() {
             position: sticky;
           }
           .logo {
-            margin-right: 30px
+            margin-right: 30px;
           }
           .menu li {
             margin: 0 20px;
@@ -29,26 +31,30 @@ export default function Header() {
       <div className="headerPublic f mdl">
         <div className="container f f-btw mdl">
           <div>
-            <a className='link'>CREATOR SUPER FEST 2021</a>
+            <a className="link">CREATOR SUPER FEST 2021</a>
           </div>
           <div className="f mdl">
             <ul className="f menu" style={{ margin: 0 }}>
-
               <li>
-                <a href='#guest-star' className="link">Guest Stars</a>
+                <a href="#guest-star" className="link">
+                  Guest Stars
+                </a>
               </li>
 
               <li>
-                <a href='#rundown' className="link">Rundown</a>
+                <a href="#rundown" className="link">
+                  Rundown
+                </a>
               </li>
               <li>
-                <a href='#venue' className="link">Venue</a>
+                <a href="#venue" className="link">
+                  Venue
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-
     </React.Fragment>
-  )
+  );
 }

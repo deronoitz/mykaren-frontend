@@ -1,6 +1,6 @@
 import KarenParticle from "components/commons/Particle";
 import Link from "components/commons/Link";
-import PublicLayout from "components/scenes/Layout/PublicLayout";
+import PublicLayout from "components/commons/Layout/PublicLayout";
 import css from "styled-jsx/css";
 
 import { LineDecoration } from "components/commons/Decoration";
