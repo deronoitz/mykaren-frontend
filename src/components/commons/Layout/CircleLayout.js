@@ -1,6 +1,4 @@
-import { useRouter } from "next/router"
-import HeaderUser from './HeaderPublic'
-import Sidemenu from "../Sidemenu/Sidemenu"
+import { useRouter } from "next/router";
 import {
   AppstoreOutlined,
   StarOutlined,
@@ -8,78 +6,79 @@ import {
   UserOutlined,
   SettingOutlined,
   ShopOutlined
-} from '@ant-design/icons'
+} from "@ant-design/icons";
+
+import HeaderUser from "./HeaderPublic";
+import Sidemenu from "components/commons/Sidemenu";
 
 const menu = (id) => [
   {
-    title: 'BOOTH SPACE',
+    title: "BOOTH SPACE",
     menu: [
       {
-        title: 'Overview',
+        title: "Overview",
         link: `/circle/${id}`,
         icon: <AppstoreOutlined />
       },
       {
-        title: 'Order',
+        title: "Order",
         link: `/circle/${id}/order`,
         icon: <ShopOutlined />,
         count: 4
-      },
+      }
     ]
   },
   {
-    title: 'MAIN MENU',
+    title: "MAIN MENU",
     menu: [
       {
-        title: 'Product',
+        title: "Product",
         link: `/circle/${id}/catalog`,
         icon: <StarOutlined />
       },
       {
-        title: 'Event',
+        title: "Event",
         link: `/circle/${id}/event`,
         icon: <CarryOutOutlined />
       },
       {
-        title: 'Member',
+        title: "Member",
         link: `/circle/${id}/member`,
         icon: <UserOutlined />
       },
       {
-        title: 'Settings',
+        title: "Settings",
         link: `/circle/${id}/settings`,
         icon: <SettingOutlined />
-      },
+      }
     ]
   }
-]
+];
 
-const CircleLayout = props => {
+const CircleLayout = (props) => {
   const router = useRouter();
-  const { id } = router.query
+  const { id } = router.query;
   return (
     <React.Fragment>
       <div
         style={{
-          minHeight: '100vh',
-          backgroundImage: 'url(/images/bg-overlay.svg)',
-          backgroundPosition: 'bottom',
-          backgroundSize: 'cover'
+          minHeight: "100vh",
+          backgroundImage: "url(/images/bg-overlay.svg)",
+          backgroundPosition: "bottom",
+          backgroundSize: "cover"
         }}
       >
         <HeaderUser />
         <div style={{ marginTop: 75 }} />
         <div className="container">
           <div className="f" style={{ paddingTop: 30 }}>
-            <Sidemenu data={menu(id)} noAction/>
-            <div style={{ paddingLeft: 57, width: '100%' }}>
-              {props.children}
-            </div>
+            <Sidemenu data={menu(id)} noAction />
+            <div style={{ paddingLeft: 57, width: "100%" }}>{props.children}</div>
           </div>
         </div>
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default CircleLayout
+export default CircleLayout;

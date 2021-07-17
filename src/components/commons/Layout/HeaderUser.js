@@ -3,7 +3,7 @@ import { MoreOutlined } from "@ant-design/icons";
 import { destroyCookie } from "nookies";
 
 import Link from "components/commons/Link";
-import useUser from "lib/useUser";
+import useUser from "libs/useUser";
 import Router from "next/router";
 
 const UserMenu = (mutate) => {

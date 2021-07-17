@@ -3,7 +3,7 @@ import { Typography, Upload, Button } from "antd";
 import { LoadingOutlined, PictureOutlined } from "@ant-design/icons";
 import { Controller } from "react-hook-form";
 
-import getBase64 from "lib/getBase64";
+import getBase64 from "libs/getBase64";
 import Link from "components/commons/Link";
 import Input from "components/common/Input";
 

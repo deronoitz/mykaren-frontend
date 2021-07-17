@@ -6,7 +6,7 @@ import { Circle__GetCategory } from "modules/circle/get-category";
 import { Controller } from "react-hook-form";
 
 import Input from "components/commons/Input";
-import getBase64 from "lib/getBase64";
+import getBase64 from "libs/getBase64";
 import slug from "limax";
 
 const { Option } = Select;
