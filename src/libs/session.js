@@ -5,9 +5,7 @@ export function withSession(handler) {
     password: process.env.SECRET_COOKIE_PASSWORD,
     cookieName: "karen-user-data",
     cookieOptions: {
-      // the next line allows to use the session in non-https environements like
-      // Next.js dev mode (http://localhost:3000)
-      secure: process.env.NODE_ENV === "production",
-    },
+      secure: process.env.NODE_ENV === "production"
+    }
   });
 }
