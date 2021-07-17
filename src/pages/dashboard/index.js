@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { withSession } from "libs/session";
 import { Typography } from "antd";
 
-import AppLayout from "components/Layout/UserLayout";
-import CircleWrapper from "components/_Circle/CircleWrapper";
+import AppLayout from "components/commons/Layout/UserLayout";
+import CircleWrapper from "components/scenes/Circle/CircleWrapper";
 
 export default function Dashboard(props) {
   useEffect(() => {

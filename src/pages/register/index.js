@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { withSession } from "libs/session";
-import { RegisterForm } from "components/User/RegisterForm";
-import { EmailConfirmation } from "components/User/EmailConfirmation";
+import { RegisterForm } from "components/commons/User/RegisterForm";
+import { EmailConfirmation } from "components/commons/User/EmailConfirmation";
 
-import PublicLayout from "components/Layout/PublicLayout";
-import KarenParticle from "components/Particle";
+import PublicLayout from "components/commons/Layout/PublicLayout";
+import KarenParticle from "components/commons/Particle";
 import css from "styled-jsx/css";
 
 const style = css.global`

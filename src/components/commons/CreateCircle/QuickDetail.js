@@ -5,7 +5,7 @@ import { Controller } from "react-hook-form";
 
 import getBase64 from "libs/getBase64";
 import Link from "components/commons/Link";
-import Input from "components/common/Input";
+import Input from "components/commons/Input";
 
 const QuickDetail = (props) => {
   const [uploadLoading, setUploadLoading] = useState(false);

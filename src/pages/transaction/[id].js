@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { withSession } from "libs/session";
 
-import AppLayout from "components/Layout/UserLayout";
-import Details from "components/Transaction/Details";
+import AppLayout from "components/commons/Layout/UserLayout";
+import Details from "components/commons/Transaction/Details";
 
 export default function DetailTransaction(props) {
   useEffect(() => {

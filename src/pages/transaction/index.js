@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { withSession } from "libs/session";
 import { Typography } from "antd";
 
-import AppLayout from "components/Layout/UserLayout";
-import TransactionWrapper from "components/Transaction/Wrapper";
+import AppLayout from "components/commons/Layout/UserLayout";
+import TransactionWrapper from "components/commons/Transaction/Wrapper";
 import qs from "query-string";
 
 export default function Transaction(props) {

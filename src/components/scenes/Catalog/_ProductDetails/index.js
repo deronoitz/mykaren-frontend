@@ -1,17 +1,19 @@
-import { useEffect } from 'react'
-import CircleProducts from './CircleProducts'
-import SimilarProducts from './SimilarProducts'
-import Float from './Float'
-import Gallery from './Gallery'
-import Info from './Info'
-import Context from 'hooks/product-details'
-import Breadcrumb from 'components/Breadcrumb/Breadcrumb'
+import { useEffect } from "react";
+
+import CircleProducts from "./CircleProducts";
+import SimilarProducts from "./SimilarProducts";
+import Float from "./Float";
+import Gallery from "./Gallery";
+import Info from "./Info";
+import Context from "hooks/product-details";
+import Breadcrumb from "components/commons/Breadcrumb";
+
 export default function ProductDetails({ data }) {
-  const product = data?.data
-  const { setData } = Context.useContainer()
+  const product = data?.data;
+  const { setData } = Context.useContainer();
   useEffect(() => {
-    setData(product)
-  }, [product])
+    setData(product);
+  }, [product]);
   return (
     <div>
       <style jsx>
@@ -25,16 +27,16 @@ export default function ProductDetails({ data }) {
           }
         `}
       </style>
-      <div className='container'>
+      <div className="container">
         <Breadcrumb />
-        <div className='f' style={{ marginTop: 20, paddingBottom: 70 }}>
-          <div className='left'>
-            <div className='f'>
+        <div className="f" style={{ marginTop: 20, paddingBottom: 70 }}>
+          <div className="left">
+            <div className="f">
               <Gallery />
               <Info />
             </div>
           </div>
-          <div className='right'>
+          <div className="right">
             <Float />
           </div>
         </div>
@@ -42,5 +44,5 @@ export default function ProductDetails({ data }) {
       <CircleProducts />
       {/* <SimilarProducts /> */}
     </div>
-  )
+  );
 }

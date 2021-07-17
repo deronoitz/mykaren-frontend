@@ -1,11 +1,13 @@
-import PublicLayout from "components/Layout/PublicLayout";
-import Search from "components/_Catalog/Search";
-import CardWrapper from "components/_Catalog/CardWrapper";
-import Filter from "components/_Catalog/Filter";
+import PublicLayout from "components/commons/Layout/PublicLayout";
+import Search from "components/scenes/Catalog/Search";
+import CardWrapper from "components/scenes/Catalog/CardWrapper";
+import Filter from "components/scenes/Catalog/Filter";
+
 import { Product__GetCatalog } from "modules/product/get-catalog";
 import { useEffect } from "react";
 import { Typography } from "antd";
 import { useRouter } from "next/router";
+
 const { Title, Text } = Typography;
 
 export default function Catalog() {
@@ -22,8 +24,7 @@ export default function Catalog() {
   }, [query]);
 
   const isSearch = query.search?.length > 0;
-  const getQuery =
-    query.search?.length > 0 ? `?name_contains=${query.search}` : "";
+  const getQuery = query.search?.length > 0 ? `?name_contains=${query.search}` : "";
   const productSWR = Product__GetCatalog.swr(getQuery);
   const products = productSWR.data?.data;
 
@@ -45,14 +46,10 @@ export default function Catalog() {
             {isSearch && products && `${products?.length} products found`}
             {isSearch && !products && "Loading..."}
           </Title>
-          <Text
-            className="centered"
-            style={{ display: "block", fontSize: 16, marginBottom: 10 }}
-          >
+          <Text className="centered" style={{ display: "block", fontSize: 16, marginBottom: 10 }}>
             {isSearch && (
               <div>
-                Search result for "{query.search}" -{" "}
-                <a onClick={() => router.push("/catalog")}>Clear search</a>
+                Search result for "{query.search}" - <a onClick={() => router.push("/catalog")}>Clear search</a>
               </div>
             )}
             {!query.search && "Browse all products on events"}

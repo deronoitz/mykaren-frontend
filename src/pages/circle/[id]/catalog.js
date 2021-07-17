@@ -1,5 +1,5 @@
-import CircleLayout from "components/Layout/CircleLayout";
-import Catalog from "components/_Circle/Catalog";
+import CircleLayout from "components/commons/Layout/CircleLayout";
+import Catalog from "components/scenes/Circle/Catalog";
 import Context from "hooks/circle";
 
 import { withSession } from "libs/session";

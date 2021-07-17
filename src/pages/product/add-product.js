@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { CreateProductContext } from "hooks/create-product";
 import { withSession } from "libs/session";
 
-import AddProduct from "components/_Product/AddProduct";
-import AppLayout from "components/Layout/FormLayout";
+import AddProduct from "components/scenes/Product/AddProduct";
+import AppLayout from "components/commons/Layout/FormLayout";
 
 export default function AddProductPage(props) {
   useEffect(() => {

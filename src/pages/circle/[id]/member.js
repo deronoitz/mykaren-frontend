@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { withSession } from "libs/session";
 
-import CircleLayout from "components/Layout/CircleLayout";
-import Member from "components/_Circle/Member";
+import CircleLayout from "components/commons/Layout/CircleLayout";
+import Member from "components/scenes/Circle/Member";
 import Context from "hooks/circle";
 
 export default function MemberPage(props) {

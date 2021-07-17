@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { withSession } from "libs/session";
 
 import Context from "hooks/circle";
-import CircleLayout from "components/Layout/CircleLayout";
-import Order from "components/_Circle/Order";
+import CircleLayout from "components/commons/Layout/CircleLayout";
+import Order from "components/scenes/Circle/Order";
 
 export default function Circle(props) {
   useEffect(() => {

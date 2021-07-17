@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { withSession } from "libs/session";
 
-import AppLayout from "components/Layout/FormLayout";
-import CreateCircle from "components/CreateCircle/CreateCircle";
+import AppLayout from "components/commons/Layout/FormLayout";
+import CreateCircle from "components/commons/CreateCircle/CreateCircle";
 
 export default function Create() {
   useEffect(() => {

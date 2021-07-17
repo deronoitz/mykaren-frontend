@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import BagLayout from "components/Layout/BagLayout";
+import BagLayout from "components/commons/Layout/BagLayout";
 import Bag from "components/scenes/Bag";
 import Context from "hooks/bag";
 
