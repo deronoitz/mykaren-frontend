@@ -1,0 +1,192 @@
+@primaryColor: #F72963;
+@titleColor: rgba(0,0,0,.85);
+
+
+
+#mykaren {
+  .ant-tag {
+    border-radius: 8px;
+  }
+  .ant-input.no-arrow::-webkit-outer-spin-button,
+  .ant-input.no-arrow::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .search-input .ant-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  .ant-btn-sm:not(.ant-btn-circle) {
+    height: 32px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+  .ant-menu-item, .ant-menu-submenu-title {
+    border-radius: 14px;
+  }
+  .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+    color:  #fff;
+    font-weight: 500;
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected .anticon {
+    color: #fff
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: linear-gradient(45deg, #F72963, #9370ff)
+  }
+  .ant-menu-item:active, .ant-menu-submenu-title:active {
+    background: transparent
+  }
+  .karenSelector.ant-select-show-search.ant-select-multiple .ant-select-selector {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .ant-upload.ant-upload-select-picture-card > .ant-upload {
+    padding: 0
+  }
+  .ant-upload.ant-upload-select-picture-card > .ant-upload img.avatar {
+    height: 138px;
+    width: 138px!important;
+    object-fit: cover;
+  }
+  .ant-table-thead > tr > th {
+    background: transparent;
+    font-weight: 600;
+  }
+  h4.ant-typography, .ant-typography h4 {
+    font-size: 18px;
+  }
+  h1.ant-typography, .ant-typography h1 {
+    font-size: 36px;
+  }
+  .link {
+    font-weight: 500;
+    color: @titleColor;
+    position: relative
+  }
+  .link:hover {
+    color: @primaryColor
+  }
+  .link.lined::after {
+    background: @primaryColor;
+  }
+  .link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: transparent;
+  }
+  .link.active {
+    color: @primaryColor;
+  }
+  .link.active::after {
+    background: @primaryColor;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+  }
+  .ant-input {
+    border: none;
+    border-bottom: solid 2px #efefef;
+    border-radius: 0;
+    outline: none;
+    padding: 4px 11px;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .ant-select-single:not(.ant-select-customize-input):not(.antd) .ant-select-selector {
+    border: none;
+    border-bottom: solid 2px #efefef;
+    border-radius: 0;
+    outline: none;
+    padding: 4px 11px;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector:focus,
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector:hover {
+    border-bottom-color: @primaryColor
+  }
+  .ant-input-group .ant-input-affix-wrapper:not(:first-child) {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .ant-input-affix-wrapper-lg, .ant-input-affix-wrapper:not(.karen-input) {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .ant-input-search-icon {
+    margin-left: 0;
+    font-size: 18px;
+  }
+  .ant-input-search-icon::before {
+    border: none
+  }
+  .ant-input:hover, .ant-input:focus {
+    border-bottom-color: var(--primaryColor);
+  }
+  .ant-select-multiple{
+    border-bottom: solid 2px #efefef;
+    transition: .3s;
+  }
+  .ant-select-multiple:hover, .ant-select-multiple:focus {
+    border-bottom-color: var(--primaryColor);
+  }
+  .ant-select-lg {
+    font-size: 14px;
+  }
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .subTitle {
+    font-size: 18px
+  }
+  .centered {
+    text-align: center;
+  }
+  .inputAddOn {
+    .ant-input-group-addon {
+      color: #828282;
+      background: #efefef;
+      border: none;
+    }
+    .ant-input {
+      height: 42px;
+    }
+  }
+}
+.ant-modal-header {
+  border-bottom: none!important;
+}
+
+#mykaren .karen-input.ant-input-password .ant-input {
+  border-bottom: none;
+  padding: 0;
+}
+
+.karenSelector.user.ant-select-multiple .ant-select-selection-item {
+  height: 54px
+}
+
+#mykaren .ant-checkbox-inner {
+  border-radius: 8px;
+}
+#mykaren .ant-radio-checked::after {
+  display: none
+}
