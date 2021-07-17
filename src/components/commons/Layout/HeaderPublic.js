@@ -1,15 +1,12 @@
-import { Button, Badge, Dropdown, Menu, Avatar, Typography } from "antd";
-import {
-  ShoppingCartOutlined,
-  UserOutlined,
-  MoreOutlined
-} from "@ant-design/icons";
+import { Badge, Dropdown, Menu, Avatar, Typography } from "antd";
+import { ShoppingCartOutlined, UserOutlined, MoreOutlined } from "@ant-design/icons";
 import { uniqBy } from "lodash";
 import { Cart_GetCart } from "modules/cart/get-cart";
 import { useState, useEffect } from "react";
 import { destroyCookie } from "nookies";
+
 import useUser from "lib/useUser";
-import Link from "../Link/Link";
+import Link from "components/commons/Link";
 import Router from "next/router";
 
 const UserMenu = (mutate) => {
@@ -21,21 +18,7 @@ const UserMenu = (mutate) => {
   };
   return (
     <Menu>
-      {/* <Menu.Item style={{ minWidth: 200, padding: '8px 20px' }}>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-          Account Settings
-      </a>
-      </Menu.Item>
-      <Menu.Item style={{ minWidth: 200, padding: '8px 20px' }}>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-          Help
-        </a>
-      </Menu.Item> */}
-      <Menu.Item
-        style={{ minWidth: 200, padding: "8px 20px" }}
-        danger
-        onClick={() => handleLogout()}
-      >
+      <Menu.Item style={{ minWidth: 200, padding: "8px 20px" }} danger onClick={() => handleLogout()}>
         Sign Out
       </Menu.Item>
     </Menu>
@@ -54,15 +37,11 @@ export default function Header() {
     quantity: i.quantity
   }));
   const ISSERVER = typeof window === "undefined";
-  let initial =
-    user?.profile.firstName?.split("")[0] +
-      user?.profile.lastName?.split("")[0] || "";
+  let initial = user?.profile.firstName?.split("")[0] + user?.profile.lastName?.split("")[0] || "";
 
   let bagItems = [];
   useEffect(() => {
     if (!ISSERVER) {
-      // bagItems = localStorage?.getItem('myBag')
-      // bagItems = JSON.parse(bagItems) || []
       localStorage?.setItem("myBag", "[]");
       let merged = [...cartItemsConstructed, ...bagItems];
       merged = uniqBy(merged, "product");
@@ -121,17 +100,9 @@ export default function Header() {
                   <a className="link">Event</a>
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/circle" activeClassName="active">
-                  <a className="link">Exhibitors</a>
-                </Link>
-              </li> */}
               <li>
                 <Link href="/catalog" activeClassName="active">
-                  <a className="link">
-                    Catalog
-                    {/* <Badge dot /> */}
-                  </a>
+                  <a className="link">Catalog</a>
                 </Link>
               </li>
               {isLoggedIn && (
@@ -146,21 +117,13 @@ export default function Header() {
           <div className="f mdl">
             <Link href="/bag">
               <a className="link" style={{ margin: "0 20px" }}>
-                <ShoppingCartOutlined
-                  style={{ color: "var(--primaryColor)", marginRight: 5 }}
-                />
+                <ShoppingCartOutlined style={{ color: "var(--primaryColor)", marginRight: 5 }} />
                 Bag
-                {counter !== 0 && (
-                  <Badge count={counter} style={{ marginLeft: 5 }} />
-                )}
+                {counter !== 0 && <Badge count={counter} style={{ marginLeft: 5 }} />}
               </a>
             </Link>
             {isLoggedIn ? (
-              <Dropdown
-                className="action"
-                overlay={UserMenu(mutateUser)}
-                placement="bottomRight"
-              >
+              <Dropdown className="action" overlay={UserMenu(mutateUser)} placement="bottomRight">
                 <div>
                   <Avatar>{initial}</Avatar>
                   <Typography.Text style={{ margin: "0 10px" }} strong>
@@ -172,15 +135,10 @@ export default function Header() {
             ) : (
               <Link href="/login">
                 <a className="link">
-                  <UserOutlined
-                    style={{ color: "var(--primaryColor)", marginRight: 5 }}
-                  />{" "}
-                  Account
+                  <UserOutlined style={{ color: "var(--primaryColor)", marginRight: 5 }} /> Account
                 </a>
               </Link>
             )}
-
-            {/* <Button className="signUpButton" onClick={() => Router.push("/register")}>Sign Up</Button> */}
           </div>
         </div>
       </div>

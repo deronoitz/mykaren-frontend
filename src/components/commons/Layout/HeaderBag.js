@@ -1,11 +1,12 @@
-import Router from "next/router"
-import { ArrowRightOutlined } from '@ant-design/icons'
-import Link from '../Link/Link'
-import Context from 'hooks/bag'
+import { ArrowRightOutlined } from "@ant-design/icons";
+
+import Link from "components/commons/Link";
+import Context from "hooks/bag";
+
 export default function Header() {
-  const { step, setStep } = Context.useContainer()
+  const { step, setStep } = Context.useContainer();
   return (
-    <React.Fragment>
+    <>
       <style jsx>
         {`
           .headerPublic {
@@ -18,7 +19,7 @@ export default function Header() {
             top: 0;
           }
           .logo {
-            margin-right: 50px
+            margin-right: 50px;
           }
           .menu li {
             margin: 0 20px;
@@ -27,14 +28,14 @@ export default function Header() {
             margin: 0;
           }
           .menu li:first-child {
-            margin-left: 0
+            margin-left: 0;
           }
           .headerPublic :global(.signUpButton) {
             margin-left: 20px;
           }
           .light {
-            font-weight: 400!important;
-            color: var(--contentColor)!important;
+            font-weight: 400 !important;
+            color: var(--contentColor) !important;
           }
         `}
       </style>
@@ -50,21 +51,30 @@ export default function Header() {
           <div>
             <ul className="f menu" style={{ margin: 0 }}>
               <li>
-                <a className="link" onClick={() => setStep(1)}>My Bag</a>
+                <a className="link" onClick={() => setStep(1)}>
+                  My Bag
+                </a>
               </li>
-              <li className='arrow'><ArrowRightOutlined /></li>
-              <li>
-                <a className={`link ${step < 2 && 'light'}`} onClick={() => setStep(2)}>Pick up & Payment</a>
+              <li className="arrow">
+                <ArrowRightOutlined />
               </li>
-              <li className='arrow'><ArrowRightOutlined /></li>
               <li>
-                <a className={`link ${step < 3 && 'light'}`} onClick={() => setStep(3)}>Done</a>
+                <a className={`link ${step < 2 && "light"}`} onClick={() => setStep(2)}>
+                  Pick up & Payment
+                </a>
+              </li>
+              <li className="arrow">
+                <ArrowRightOutlined />
+              </li>
+              <li>
+                <a className={`link ${step < 3 && "light"}`} onClick={() => setStep(3)}>
+                  Done
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-
-    </React.Fragment>
-  )
+    </>
+  );
 }

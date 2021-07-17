@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://aethexxyz@bitbucket.org/aethexxyz/karen-frontend.git"
+    "url": "git@github.com:deronoitz/mykaren-frontend.git"
   },
-  "homepage": "https://bitbucket.org/aethexxyz/karen-frontend#readme",
+  "homepage": "https://github.com/deronoitz/mykaren-frontend",
   "dependencies": {
     "@hookform/resolvers": "1.3.0",
     "@zeit/next-css": "^1.0.1",

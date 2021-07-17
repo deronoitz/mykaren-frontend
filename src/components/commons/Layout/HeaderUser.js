@@ -1,52 +1,41 @@
-import {
-  Avatar,
-  Badge,
-  Typography,
-  Menu,
-  Dropdown
-} from 'antd'
-import { BellOutlined, MoreOutlined } from '@ant-design/icons'
-import Link from '../Link/Link'
-import { destroyCookie } from "nookies"
-import useUser from "lib/useUser"
-import Router from "next/router"
+import { Avatar, Typography, Menu, Dropdown } from "antd";
+import { MoreOutlined } from "@ant-design/icons";
+import { destroyCookie } from "nookies";
+
+import Link from "components/commons/Link";
+import useUser from "lib/useUser";
+import Router from "next/router";
 
 const UserMenu = (mutate) => {
   const handleLogout = async () => {
-    await mutate(
-      fetch("/api/auth/signout", { method: "post" }), null
-    )
-    localStorage.removeItem('myBag')
-    destroyCookie(null, 'accessToken')
-    await Router.push("/login")
-  }
+    await mutate(fetch("/api/auth/signout", { method: "post" }), null);
+    localStorage.removeItem("myBag");
+    destroyCookie(null, "accessToken");
+    await Router.push("/login");
+  };
   return (
     <Menu>
-      <Menu.Item style={{ minWidth: 200, padding: '8px 20px' }}>
+      <Menu.Item style={{ minWidth: 200, padding: "8px 20px" }}>
         <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
           Account Settings
-    </a>
+        </a>
       </Menu.Item>
-      <Menu.Item style={{ minWidth: 200, padding: '8px 20px' }}>
+      <Menu.Item style={{ minWidth: 200, padding: "8px 20px" }}>
         <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
           Help
-    </a>
+        </a>
       </Menu.Item>
-      <Menu.Item
-        style={{ minWidth: 200, padding: '8px 20px' }}
-        danger
-        onClick={() => handleLogout()}
-      >
+      <Menu.Item style={{ minWidth: 200, padding: "8px 20px" }} danger onClick={() => handleLogout()}>
         Sign Out
-    </Menu.Item>
+      </Menu.Item>
     </Menu>
-  )
-}
+  );
+};
 
 export default function Header() {
-  let { user: data, mutateUser } = useUser()
-  let user = data?.profile
-  let initial = user?.firstName?.split("")[0] + user?.lastName?.split("")[0] || ""
+  let { user: data, mutateUser } = useUser();
+  let user = data?.profile;
+  let initial = user?.firstName?.split("")[0] + user?.lastName?.split("")[0] || "";
   return (
     <React.Fragment>
       <style jsx>
@@ -61,7 +50,7 @@ export default function Header() {
             top: 0;
           }
           .logo {
-            margin-right: 30px
+            margin-right: 30px;
           }
           .menu li {
             margin: 0 20px;
@@ -71,7 +60,7 @@ export default function Header() {
           }
           .action {
             margin: 0 15px;
-            cursor: pointer
+            cursor: pointer;
           }
         `}
       </style>
@@ -127,7 +116,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
     </React.Fragment>
-  )
+  );
 }

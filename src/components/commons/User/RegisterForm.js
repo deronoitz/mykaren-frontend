@@ -1,21 +1,22 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
 import User__CreateContract from "modules/user/create";
 import Recaptcha__Contract from "modules/recaptcha";
-import { useForm, Controller } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
-import Input from "../../components/Input/Input";
+import Input from "components/commons/Input";
 import Link from "next/link";
+
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
 import { Typography, Button, Radio, message } from "antd";
+
 const { Text } = Typography;
+
 const Label = (props) => (
-  <Text
-    strong
-    style={{ color: "var(--titleColor)", marginBottom: 4, display: "block" }}
-  >
+  <Text strong style={{ color: "var(--titleColor)", marginBottom: 4, display: "block" }}>
     {props.children}
   </Text>
 );
+
 export function RegisterForm({ onFinish, setEmail }) {
   let [isStudent, setIsStudent] = useState(false);
   let [loading, setLoading] = useState(false);
@@ -146,12 +147,7 @@ export function RegisterForm({ onFinish, setEmail }) {
           name="phoneNumber"
           control={form.control}
           render={({ onChange, value }) => (
-            <Input
-              onChange={onChange}
-              value={value}
-              placeholder="Phone Number"
-              style={{ marginBottom: 20 }}
-            />
+            <Input onChange={onChange} value={value} placeholder="Phone Number" style={{ marginBottom: 20 }} />
           )}
         />
         <div>
@@ -172,12 +168,7 @@ export function RegisterForm({ onFinish, setEmail }) {
                 control={form.control}
                 name="nis"
                 render={({ onChange, value }) => (
-                  <Input
-                    placeholder="NIS ID"
-                    onChange={onChange}
-                    value={value}
-                    style={{ marginBottom: 10 }}
-                  />
+                  <Input placeholder="NIS ID" onChange={onChange} value={value} style={{ marginBottom: 10 }} />
                 )}
               />
               <Typography.Text
@@ -197,14 +188,7 @@ export function RegisterForm({ onFinish, setEmail }) {
           onChange={handleRecaptchaSubmit}
         />
         <div style={{ marginTop: 20, marginBottom: 10 }}>
-          <Button
-            block
-            size="large"
-            type="primary"
-            htmlType="submit"
-            disabled={!isHuman}
-            loading={loading}
-          >
+          <Button block size="large" type="primary" htmlType="submit" disabled={!isHuman} loading={loading}>
             Sign Up
           </Button>
         </div>
