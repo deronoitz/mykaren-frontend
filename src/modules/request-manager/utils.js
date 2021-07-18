@@ -34,8 +34,7 @@ export async function fetchRefreshToken(error) {
       data: formData,
       cancelToken: source.token,
       headers: {
-        "content-type": "multipart/form-data",
-        "api-key": publicRuntimeConfig.apiKey
+        "content-type": "multipart/form-data"
       }
     })
       .then((res) => {
@@ -46,8 +45,7 @@ export async function fetchRefreshToken(error) {
           return axios({
             ...originalRequest,
             headers: {
-              ["Authorization"]: "Bearer " + data.token,
-              ["api-key"]: publicRuntimeConfig.apiKey
+              ["Authorization"]: "Bearer " + data.token
             }
           });
         }

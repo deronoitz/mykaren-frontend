@@ -3,6 +3,9 @@ const proxyList = require("./proxies/index");
 
 module.exports = withAntdLess({
   lessVarsFilePath: "./src/assets/antd-custom.less",
+  publicRuntimeConfig: {
+    baseUrl: process.env.API_URL
+  },
   async rewrites() {
     return proxyList;
   },

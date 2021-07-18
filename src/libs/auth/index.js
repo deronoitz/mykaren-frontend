@@ -1,12 +1,12 @@
 import Router from "next/router";
-import { API_CODES } from "src/consts/api";
+import { API_CODES } from "consts/api";
 import { parseCookies, destroyCookie, setCookie } from "nookies";
 
-export const tokenLabel = "bkk-token";
-export const refreshTokenLabel = "bkk-refresh-token";
+export const tokenLabel = "mykaren-token";
+export const refreshTokenLabel = "mykaren-refresh-token";
 
-const TOKEN_MAX_AGE = 10 * 60; // 10 minutes
-const REFRESH_TOKEN_MAX_AGE = 15 * 60; // 15 minutes
+const TOKEN_MAX_AGE = 60 * 60; // 1 hour
+const REFRESH_TOKEN_MAX_AGE = 15 * 24 * 60 * 60; // 15 days
 
 export function getToken() {
   const cookies = parseCookies();
