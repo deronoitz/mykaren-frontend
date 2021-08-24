@@ -1,7 +1,7 @@
-import Image from "next/image"
-import { Typography, Menu, Dropdown } from "antd"
-import { DownOutlined } from "@ant-design/icons"
-const { Text } = Typography
+import Image from "next/image";
+import { Typography, Menu, Dropdown } from "antd";
+import { DownOutlined } from "@ant-design/icons";
+const { Text } = Typography;
 
 const menu = (
   <Menu>
@@ -16,8 +16,8 @@ const menu = (
 );
 
 export default function ProductCard(props) {
-  const { data } = props
-  console.log(data)
+  const { data } = props;
+  console.log(data);
   return (
     <div className="productCard">
       <style jsx>
@@ -25,7 +25,7 @@ export default function ProductCard(props) {
           .productCard {
             max-width: 240px;
             margin: 10px;
-            box-shadow: 5px 5px 30px rgba(0,0,0,.1);
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
             border-radius: 16px;
           }
           .content {
@@ -51,18 +51,15 @@ export default function ProductCard(props) {
             position: absolute;
             top: 10px;
             right: 10px;
-
           }
         `}
       </style>
       <div className="image">
-        <img 
-          src={data.images?.[0]?.formats?.small?.url}
-        />
+        <img src={data.images?.[0]?.formats?.small?.url || data.images?.[0]?.formats?.thumbnail?.url} />
 
-        <Dropdown overlay={menu} placement="bottomRight" overlayStyle={{width: 120}}>
-          <a className="card-menu" onClick={e => e.preventDefault()}>
-            <DownOutlined style={{fontSize: 18, color: "#fff"}}/>
+        <Dropdown overlay={menu} placement="bottomRight" overlayStyle={{ width: 120 }}>
+          <a className="card-menu" onClick={(e) => e.preventDefault()}>
+            <DownOutlined style={{ fontSize: 18, color: "#fff" }} />
           </a>
         </Dropdown>
       </div>
@@ -71,9 +68,11 @@ export default function ProductCard(props) {
         <Text style={{ fontSize: 12, marginBottom: 5, display: "block" }}>{data.category?.name}</Text>
         <div className="f mdl f-btw">
           <Text strong>Rp. {data.price}</Text>
-          <Text><b>{data.stock}</b> In stock</Text>
+          <Text>
+            <b>{data.stock}</b> In stock
+          </Text>
         </div>
       </div>
     </div>
-  )
+  );
 }

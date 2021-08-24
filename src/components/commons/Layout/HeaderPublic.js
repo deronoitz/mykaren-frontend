@@ -29,9 +29,10 @@ export default function Header() {
   const { user, isLoggedIn, mutateUser } = useUser();
   const [counter, setCounter] = useState(0);
   const getQuery = user?.id ? `?user=${user?.id}` : null;
-  const cartSWR = Cart_GetCart.swr(getQuery);
-  const cartData = cartSWR?.data?.data?.[0];
-  const cartItems = cartData?.cartItems || [];
+  // const cartSWR = Cart_GetCart.swr(getQuery);
+  // const cartData = cartSWR?.data?.data?.[0];
+  // const cartItems = cartData?.cartItems || [];
+  const cartItems = [];
   const cartItemsConstructed = cartItems?.map((i) => ({
     product: i.product.id,
     quantity: i.quantity

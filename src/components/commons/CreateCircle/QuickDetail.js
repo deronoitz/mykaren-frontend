@@ -1,17 +1,25 @@
 import { useState, useEffect } from "react";
 import { Typography, Upload, Button } from "antd";
 import { LoadingOutlined, PictureOutlined } from "@ant-design/icons";
-import { Controller } from "react-hook-form";
+import { Controller, useWatch } from "react-hook-form";
 
 import getBase64 from "libs/getBase64";
 import Link from "components/commons/Link";
 import Input from "components/commons/Input";
 
 const QuickDetail = (props) => {
-  const [uploadLoading, setUploadLoading] = useState(false);
+  const [uploadLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
-  const watchName = props.form.watch("name", true);
-  const watchAvatar = props.form.watch("avatar", true);
+  const watchAvatar = useWatch({
+    control: props.form.control,
+    name: "avatar"
+  });
+  const watchName = useWatch({
+    control: props.form.control,
+    name: "name",
+    defaultValue: ""
+  });
+
   const handlePreview = async () => {
     const base64 = await getBase64(watchAvatar.file.originFileObj);
     setImageUrl(base64);
@@ -71,6 +79,7 @@ const QuickDetail = (props) => {
           <Controller
             name="avatar"
             control={props.form.control}
+            defaultValue=""
             render={({ onChange }) => (
               <Upload
                 listType="picture-card"

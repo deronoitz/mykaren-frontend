@@ -36,7 +36,6 @@ export default function AddProduct({ circleData }) {
       const circle_id = circleData.id;
       let allData = {
         ...data,
-        stock: 0,
         circle: circle_id
       };
       allData = cleanBody(allData);

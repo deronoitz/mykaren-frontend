@@ -34,7 +34,7 @@ export default function Bag() {
       setCartId(data?.data?.[0].id);
     }
   });
-  const cartData = cartSWR.data?.data?.[0];
+  const cartData = cartSWR?.data?.data?.[0];
   const cartItems = cartData?.cartItems || [];
   const cartItemsConstructed = cartItems?.map((i) => ({ product: i.product.id, quantity: i.quantity }));
   const ISSERVER = typeof window === "undefined";

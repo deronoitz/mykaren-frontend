@@ -11,7 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { Circle__CreateContract } from "modules/circle/create";
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 export default function CreateCircle(props) {
   const [step, setStep] = useState(0);
@@ -22,7 +22,9 @@ export default function CreateCircle(props) {
   const [avatarImage, setAvatarImage] = useState({});
   const router = useRouter();
   const form = useForm({
-    defaultValues: {},
+    defaultValues: {
+      name: ""
+    },
     resolver: yupResolver(Circle__CreateContract.schema)
   });
   const { user } = useUser();
@@ -55,12 +57,11 @@ export default function CreateCircle(props) {
         <style jsx>
           {`
             .step-container {
-              max-width: ${step === 0 ? "480px" : "715px"};
+              width: ${step === 0 ? "480px" : "715px"};
               padding: ${step === 0 ? "40px" : "57px"};
               background: #fff;
               box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
               border-radius: 16px;
-              width: 100%;
               margin: 0 auto;
             }
           `}

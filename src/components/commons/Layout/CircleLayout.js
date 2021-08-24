@@ -23,8 +23,7 @@ const menu = (id) => [
       {
         title: "Order",
         link: `/circle/${id}/order`,
-        icon: <ShopOutlined />,
-        count: 4
+        icon: <ShopOutlined />
       }
     ]
   },
